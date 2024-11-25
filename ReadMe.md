@@ -1,54 +1,70 @@
 Real-Time Chat Application
 A lightweight, scalable real-time chat application built with Node.js, leveraging native TCP sockets for efficient communication. This application demonstrates core networking principles while maintaining simplicity and performance.
+
 🌟 Features
-Server Capabilities
 
-Multi-client support with concurrent connection handling
-Efficient message broadcasting system
-Real-time message delivery
-Graceful connection handling and error recovery
-Client connection status monitoring
+### Server Capabilities
 
-Client Features
+- Multi-client support with concurrent connection handling
+- Efficient message broadcasting system
+- Real-time message delivery
+- Graceful connection handling and error recovery
+- Client connection status monitoring
 
-Interactive command-line interface
-Real-time message sending and receiving
-User presence notifications
-Connection status indicators
-Automatic reconnection attempts
-Message history preservation
+### Client Features
 
-📋 Prerequisites
+-Interactive command-line interface
+-Real-time message sending and receiving
+-User presence notifications
+-Connection status indicators
+-Automatic reconnection attempts
+-Message history preservation
 
-Node.js (v14.0.0 or higher)
-Terminal with UTF-8 support
-Available port 3000 (configurable)
+### 📋 Prerequisites
 
-🚀 Getting Started
-Server Setup
+-Node.js (v14.0.0 or higher)
+-Terminal with UTF-8 support
+-Available port 3000 (configurable)
 
-Clone the repository:
-bashCopygit clone https://github.com/yourusername/realtime-chat
-cd realtime-chat
+### 🚀 Getting Started
 
-Start the server:
-bashCopynode server.js
+## Server Setup
+
+- Clone the repository:
+```
+git clone https://github.com/yourusername/realtime-chat
+
+- cd realtime-chat
+
+```
+
+## Start the server:
+```
+node server.js
+
+```
 
 
 The server will initialize and display a startup message with the active port number.
-Client Connection
+### Client Connection
 
-Open a new terminal window
-Launch the client:
-bashCopynode client.js
+- Open a new terminal window
+- Launch the client:
+```
+node client.js
 
-When prompted, enter your username
-Start chatting!
+```
+
+- When prompted, enter your username
+- Start chatting!
 
 Multiple clients can connect simultaneously by repeating these steps in different terminals.
-🏗 Architecture
-Server Architecture
-CopyServer
+
+### 🏗 Architecture
+
+## Server Architecture
+
+Server
 ├── Connection Manager
 │   ├── Client tracking
 │   └── Connection pooling
@@ -58,8 +74,10 @@ CopyServer
 └── Error Handler
     ├── Connection recovery
     └── Error logging
-Client Architecture
-CopyClient
+
+
+## Client Architecture
+Client
 ├── Network Layer
 │   ├── Socket management
 │   └── Reconnection logic
@@ -69,62 +87,42 @@ CopyClient
 └── Message Handler
     ├── Message parsing
     └── History management
-💻 Technical Implementation
-Networking
 
-TCP sockets for reliable, ordered message delivery
-Asynchronous I/O operations
-Binary protocol for efficient data transfer
-Heartbeat mechanism for connection monitoring
 
-Data Flow
+### 💻 Technical Implementation
+## Networking
 
-Client connects to server (TCP handshake)
-Server authenticates client and adds to connection pool
-Client sends message
-Server validates and broadcasts message
-Connected clients receive and display message
+- TCP sockets for reliable, ordered message delivery
+- Asynchronous I/O operations
+- Binary protocol for efficient data transfer
+- Heartbeat mechanism for connection monitoring
 
-⚙️ Configuration
-Server configuration can be modified in config.js:
-javascriptCopymodule.exports = {
+## Data Flow
+
+- Client connects to server (TCP handshake)
+- Server authenticates client and adds to connection pool
+- Client sends message
+- Server validates and broadcasts message
+- Connected clients receive and display message
+
+### ⚙️ Configuration
+## Server configuration can be modified in config.js:
+```
+module.exports = {
   PORT: process.env.PORT || 3000,
   MAX_CLIENTS: 100,
   TIMEOUT: 5000,
   RECONNECT_ATTEMPTS: 3
 };
-🛡️ Error Handling
-The application implements comprehensive error handling:
 
-Connection failures
-Network timeouts
-Invalid message formats
-Server disconnections
-Resource exhaustion
+```
 
-🔍 Limitations
+### 🛡️ Error Handling
+## The application implements comprehensive error handling:
 
-Text-only message support
-No message persistence
-Basic authentication
-Single server instance
-No end-to-end encryption
+- Connection failures
+- Network timeouts
+- Invalid message formats
+- Server disconnections
+- Resource exhaustion
 
-🛠️ Future Improvements
-
-Message persistence using SQLite
-File sharing capabilities
-End-to-end encryption
-User authentication
-Multiple chat rooms
-Web-based interface
-Message delivery confirmation
-Typing indicators
-
-📝 Contributing
-
-Fork the repository
-Create a feature branch
-Commit your changes
-Push to the branch
-Open a Pull Request
